@@ -1,0 +1,22 @@
+name: Test
+description: Corre la suite de tests con Maven
+
+runs:
+  using: composite
+  steps:
+    - name: Configurar Java 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Correr tests
+      shell: bash
+      run: mvn -B test
+
+    - name: Subir reporte de tests
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-reports
+        path: target/surefire-reports/
