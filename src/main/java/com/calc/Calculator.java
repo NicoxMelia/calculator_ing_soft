@@ -14,10 +14,10 @@ public class Calculator {
         return a * b;
     }
 
-    // public double divide(int a, int b) {
-    //     if (b == 0) {
-    //         throw new IllegalArgumentException("No se puede dividir por cero");
-    //     }
-    //     return (double) a / b;
-    // }
+    public double divide(int a, int b) {
+        if (b == 0) {
+            throw new IllegalArgumentException("No se puede dividir por cero");
+        }
+        return (double) a / b;
+    }
 }
